@@ -7,6 +7,14 @@
 
 Astrobook is a UI component playground that supports multiple frameworks including **React**, **Vue**, **Preact**, **Svelte**, **Solid**, **Lit**, and **Astro**. It offers a unified environment to develop, test, and showcase components.
 
+## Fork Changes
+
+This repo was primarily forked to allow for importing types into the `.stories.ts` files. This required a different parser. 
+
+### Other new features
+
+- `production` config option default: `false` so that the storybook pages can be put used for development only
+
 ## Try it Online
 
 - An example of using multiple UI rendering frameworks (React, Preact, Vue, Svelte, Solid, Lit, Astro) with Astrobook.
