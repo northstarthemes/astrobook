@@ -3,7 +3,12 @@
   "changelog": "./changelog-config.cjs",
   "commit": false,
   "fixed": [
-    ["@northstarthemes/astrobook", "@northstarthemes/astrobook-core", "@northstarthemes/astrobook-types", "@northstarthemes/astrobook-ui"]
+    [
+      "@northstarthemes/astrobook",
+      "@northstarthemes/astrobook-core",
+      "@northstarthemes/astrobook-types",
+      "@northstarthemes/astrobook-ui"
+    ]
   ],
   "linked": [],
   "access": "restricted",

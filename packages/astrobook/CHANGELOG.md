@@ -1,5 +1,14 @@
 # astrobook
 
+## 0.9.0
+
+### Minor Changes
+
+- Forked Repo
+
+  - Changed parser to allow type imports into `.stories.ts` files
+  - Added `production` config option to keep storybook pages in development only
+
 ## 0.8.1
 
 ### Patch Changes
