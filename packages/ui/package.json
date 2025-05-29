@@ -1,5 +1,5 @@
 {
-  "name": "@astrobook/ui",
+  "name": "@northstarthemes/astrobook-ui",
   "type": "module",
   "version": "0.8.1",
   "description": "",
@@ -42,8 +42,8 @@
     "build": "tsx copy.ts src temp && unocss --write-transformed && prettier -w temp/style.css && tsx copy.ts temp dist"
   },
   "dependencies": {
-    "@astrobook/core": "workspace:*",
-    "@astrobook/types": "workspace:*",
+    "@northstarthemes/astrobook-core": "workspace:*",
+    "@northstarthemes/astrobook-types": "workspace:*",
     "astro-theme-toggle": "^0.6.0",
     "just-group-by": "^2.2.0"
   },

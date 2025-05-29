@@ -1,5 +1,5 @@
 {
-  "name": "@astrobook/core",
+  "name": "@northstarthemes/astrobook-core",
   "type": "module",
   "version": "0.8.1",
   "description": "",
@@ -32,7 +32,7 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@astrobook/types": "workspace:*",
+    "@northstarthemes/astrobook-types": "workspace:*",
     "@sveltejs/acorn-typescript": "^1.0.5",
     "acorn": "^8.14.1",
     "fdir": "^6.4.4",

@@ -1,5 +1,5 @@
 {
-  "name": "astrobook",
+  "name": "@northstarthemes/astrobook",
   "type": "module",
   "version": "0.8.1",
   "description": "The minimal UI component playground",
@@ -68,9 +68,9 @@
     "build": "tsc --build tsconfig.build.json"
   },
   "dependencies": {
-    "@astrobook/core": "workspace:*",
-    "@astrobook/types": "workspace:*",
-    "@astrobook/ui": "workspace:*"
+    "@northstarthemes/astrobook-core": "workspace:*",
+    "@northstarthemes/astrobook-types": "workspace:*",
+    "@northstarthemes/astrobook-ui": "workspace:*"
   },
   "peerDependencies": {
     "astro": ">=4.0.0"
