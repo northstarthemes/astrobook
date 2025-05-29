@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  astrobook@*: workspace:*
+  '@northstarthemes/astrobook@*': workspace:*
 
 importers:
 
@@ -66,8 +66,8 @@ importers:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
       astrobook:
-        specifier: workspace:*
-        version: link:../../packages/astrobook
+        specifier: '*'
+        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
 
   examples/mixed:
     dependencies:
@@ -78,8 +78,8 @@ importers:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
       astrobook:
-        specifier: workspace:*
-        version: link:../../packages/astrobook
+        specifier: '*'
+        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       preact:
         specifier: ^10.26.4
         version: 10.26.6
@@ -111,8 +111,8 @@ importers:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
       astrobook:
-        specifier: workspace:*
-        version: link:../../packages/astrobook
+        specifier: '*'
+        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       lit:
         specifier: ^3.2.1
         version: 3.3.0
@@ -147,8 +147,8 @@ importers:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
       astrobook:
-        specifier: workspace:*
-        version: link:../../packages/astrobook
+        specifier: '*'
+        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       preact:
         specifier: ^10.26.4
         version: 10.26.6
@@ -168,8 +168,8 @@ importers:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
       astrobook:
-        specifier: workspace:*
-        version: link:../../packages/astrobook
+        specifier: '*'
+        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       preact:
         specifier: ^10.26.4
         version: 10.26.6
@@ -179,13 +179,13 @@ importers:
 
   packages/astrobook:
     dependencies:
-      '@astrobook/core':
+      '@northstarthemes/astrobook-core':
         specifier: workspace:*
         version: link:../core
-      '@astrobook/types':
+      '@northstarthemes/astrobook-types':
         specifier: workspace:*
         version: link:../types
-      '@astrobook/ui':
+      '@northstarthemes/astrobook-ui':
         specifier: workspace:*
         version: link:../ui
     devDependencies:
@@ -207,7 +207,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@astrobook/types':
+      '@northstarthemes/astrobook-types':
         specifier: workspace:*
         version: link:../types
       '@sveltejs/acorn-typescript':
@@ -265,10 +265,10 @@ importers:
 
   packages/ui:
     dependencies:
-      '@astrobook/core':
+      '@northstarthemes/astrobook-core':
         specifier: workspace:*
         version: link:../core
-      '@astrobook/types':
+      '@northstarthemes/astrobook-types':
         specifier: workspace:*
         version: link:../types
       astro-theme-toggle:
@@ -329,6 +329,20 @@ packages:
 
   '@antfu/utils@8.1.1':
     resolution: {integrity: sha512-Mex9nXf9vR6AhcXmMrlz/HVgYYZpVGJ6YlPgwl7UnaFpnshXs6EK/oa5Gpf3CzENMjkvEx2tQtntGnb7UtSTOQ==}
+
+  '@astrobook/core@0.8.1':
+    resolution: {integrity: sha512-tqdlF/4rFSIT1ijMwVtypl1CbZArFVCPxOuTyvLN9mskWR8TFak0zfp+FKYEXgiBPDZFWeTOB7AKxKsUYoZK8w==}
+
+  '@astrobook/types@0.8.1':
+    resolution: {integrity: sha512-jKQL5PUZ91+ClsRYhrxcpJk24v2hYfsC/Cwfv3lWAlNm2o0v1KRTxfaq09/kqMUS+1mwWtcmrqDTmoVG8q2PQA==}
+
+  '@astrobook/ui@0.8.1':
+    resolution: {integrity: sha512-QrZr9spTYs5m6BKLcdifw8XMVnLyoSm1JGkWMQILYEp/UH67SlxBXiPzV0EM+S8xj12mRe+CbfRuD5Cai5Mwtg==}
+    peerDependencies:
+      astro: '>=4.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
 
   '@astrojs/compiler@2.12.0':
     resolution: {integrity: sha512-7bCjW6tVDpUurQLeKBUN9tZ5kSv5qYrGmcn0sG0IwacL7isR2ZbyyA3AdZ4uxsuUFOS2SlgReTH7wkxO6zpqWA==}
@@ -2003,6 +2017,14 @@ packages:
     resolution: {integrity: sha512-G57ELkdIntDiSrucA5lQaRtBOjquaZ9b9NIwoz2f471ZuuJcynLjWgItgBzlrz5UMY4WqnFbVWUCKlJb7nt9bA==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
+
+  astrobook@0.8.1:
+    resolution: {integrity: sha512-iT88wPZmMn6nb7Lo/V7m/MlgQTpuzmJlj9iFNGdbEsK5LpMLYMZOFuKei6nIjm3kZxdYSq/LNgp32oSMXIXDWg==}
+    peerDependencies:
+      astro: '>=4.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
 
   async-function@1.0.0:
     resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
@@ -5173,6 +5195,26 @@ snapshots:
 
   '@antfu/utils@8.1.1': {}
 
+  '@astrobook/core@0.8.1':
+    dependencies:
+      '@astrobook/types': 0.8.1
+      acorn: 8.14.1
+      acorn-jsx: 5.3.2(acorn@8.14.1)
+      fdir: 6.4.5(picomatch@4.0.2)
+      picomatch: 4.0.2
+      slash: 5.1.0
+
+  '@astrobook/types@0.8.1': {}
+
+  '@astrobook/ui@0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))':
+    dependencies:
+      '@astrobook/core': 0.8.1
+      '@astrobook/types': 0.8.1
+      astro-theme-toggle: 0.6.0
+      just-group-by: 2.2.0
+    optionalDependencies:
+      astro: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
+
   '@astrojs/compiler@2.12.0': {}
 
   '@astrojs/internal-helpers@0.6.1': {}
@@ -7384,7 +7426,7 @@ snapshots:
       unstorage: 1.16.0
       vfile: 6.0.3
       vite: 6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
-      vitefu: 1.0.6(vite@6.3.5(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))
+      vitefu: 1.0.6(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.2
@@ -7427,6 +7469,14 @@ snapshots:
       - typescript
       - uploadthing
       - yaml
+
+  astrobook@0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)):
+    dependencies:
+      '@astrobook/core': 0.8.1
+      '@astrobook/types': 0.8.1
+      '@astrobook/ui': 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
+    optionalDependencies:
+      astro: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
 
   async-function@1.0.0: {}
 
@@ -10924,10 +10974,6 @@ snapshots:
   vitefu@1.0.6(vite@6.3.5(@types/node@20.17.48)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)):
     optionalDependencies:
       vite: 6.3.5(@types/node@20.17.48)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
-
-  vitefu@1.0.6(vite@6.3.5(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)):
-    optionalDependencies:
-      vite: 6.3.5(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
 
   vitefu@1.0.6(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)):
     optionalDependencies:

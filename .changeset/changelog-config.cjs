@@ -27,7 +27,7 @@ function formatCommit(commit) {
 
   const shortCommit = commit.slice(0, 7)
 
-  return `[\`${shortCommit}\`](https://github.com/ocavue/astrobook/commit/${commit}) `
+  return `[\`${shortCommit}\`](https://github.com/northstarthemes/astrobook/commit/${commit}) `
 }
 
 /** @type import('@changesets/types').GetDependencyReleaseLine */
