@@ -25,6 +25,10 @@ export function createAstrobookIntegration(
         config,
         logger,
       }) => {
+        if (!options?.production && import.meta.env.PROD) {
+          logger.debug(`Skipping Astrobook in production`)
+          return
+        }
         const rootDir = path.resolve(options?.directory || '.')
         const astroBaseUrl = config.base || '/'
         const astrobookBaseUrl = options?.subpath || ''

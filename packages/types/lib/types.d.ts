@@ -1,5 +1,20 @@
 export interface IntegrationOptions {
   /**
+   * Whether the storybook pages are compiled in production.
+   *
+   * @default false
+   *
+   * @example
+   *
+   * ```js
+   * astrobook({
+   *  production: true,
+   * })
+   * ```
+   */
+  production?: boolean
+
+  /**
    * The directory to scan for stories.
    *
    * @default '.'
