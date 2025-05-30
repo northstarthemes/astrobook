@@ -1,5 +1,11 @@
 # astrobook
 
+## 0.9.5
+
+### Patch Changes
+
+- fix: head import
+
 ## 0.9.4
 
 ### Patch Changes
