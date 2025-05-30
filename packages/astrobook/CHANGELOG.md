@@ -1,5 +1,23 @@
 # astrobook
 
+## 0.9.3
+
+### Patch Changes
+
+- ENV
+
+## 0.9.2
+
+### Patch Changes
+
+- Fix node env check
+
+## 0.9.1
+
+### Patch Changes
+
+- Resolve import issues
+
 ## 0.9.0
 
 ### Minor Changes
