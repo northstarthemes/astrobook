@@ -3,7 +3,7 @@ import path from 'node:path'
 import pathPosix from 'node:path/posix'
 import { fileURLToPath } from 'node:url'
 
-import type { IntegrationOptions } from '@astrobook/types'
+import type { IntegrationOptions } from '@northstarthemes/astrobook-types'
 import type { AstroIntegration } from 'astro'
 
 import {

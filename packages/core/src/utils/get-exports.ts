@@ -8,7 +8,7 @@ export function getExports(code: string): string[] {
   // Parse the code into an AST
   const parser = Parser.extend(
     tsPlugin({
-      dts: true,
+      dts: false,
       jsx: {
         allowNamespaces: true,
         allowNamespacedObjects: true,

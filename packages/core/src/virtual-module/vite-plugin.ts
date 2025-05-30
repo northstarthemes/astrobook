@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import type { GlobalConfig } from '@astrobook/types'
+import type { GlobalConfig } from '@northstarthemes/astrobook-types'
 import type { AstroConfig } from 'astro'
 import type { Plugin } from 'vite'
 

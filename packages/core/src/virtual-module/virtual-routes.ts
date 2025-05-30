@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import type { Story, StoryModule } from '@astrobook/types'
+import type { Story, StoryModule } from '@northstarthemes/astrobook-types'
 import type { AstroIntegrationLogger } from 'astro'
 import slash from 'slash'
 

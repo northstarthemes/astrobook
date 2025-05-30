@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import type { StoryModule } from '@astrobook/types'
+import type { StoryModule } from '@northstarthemes/astrobook-types'
 import { fdir } from 'fdir'
 import kebabCase from 'just-kebab-case'
 import slash from 'slash'

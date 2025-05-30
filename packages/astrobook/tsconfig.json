@@ -1,7 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "composite": true
+    "composite": true,
   },
-  "include": ["src/**/*", "./*.js", "./*.ts"]
+  "include": ["src/**/*", "./*.js", "./*.ts", "lib/**/*"],
+  "references": [
+    { "path": "../ui" }
+  ]
 }

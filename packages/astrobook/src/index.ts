@@ -1,3 +1,3 @@
-import { createAstrobookIntegration } from '@astrobook/core'
+import { createAstrobookIntegration } from '@northstarthemes/astrobook-core'
 
 export default createAstrobookIntegration
