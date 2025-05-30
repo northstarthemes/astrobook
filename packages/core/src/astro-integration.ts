@@ -25,7 +25,7 @@ export function createAstrobookIntegration(
         config,
         logger,
       }) => {
-        if (!options?.production && process.env.NODE_ENV === 'production') {
+        if (!options?.production && process.env.NODE_ENV === "production") {
           logger.debug(`Skipping Astrobook in production`)
           return
         }
@@ -65,7 +65,7 @@ export function createAstrobookIntegration(
                 rootDir,
                 {
                   baseUrl,
-                  head: options?.head || 'astrobook/components/head.astro',
+                  head: options?.head || '@northstarthemes/astrobook-ui/components/head.astro',
                   css: options?.css || [],
                   title: options?.title || 'Astrobook',
                 },
@@ -89,7 +89,7 @@ export function createAstrobookIntegration(
         }
         injectRoute({
           pattern: astrobookBaseUrl,
-          entrypoint: 'astrobook/pages/app.astro',
+          entrypoint: '@northstarthemes/astrobook/pages/app.astro',
           prerender: true,
         })
       },

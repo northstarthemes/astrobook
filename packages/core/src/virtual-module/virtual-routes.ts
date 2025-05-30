@@ -79,8 +79,8 @@ export async function getVirtualRoutes(
 export function createVirtualRouteComponent(route: VirtualRoute): string {
   return `
 ---
-import StoryPage from 'astrobook/pages/story.astro'
-import { isAstroStory } from 'astrobook/client'
+import StoryPage from '@northstarthemes/astrobook/pages/story.astro'
+import { isAstroStory } from '@northstarthemes/astrobook/client'
 import * as m from '${route.storyModule.importPath}'
 
 const isAstro = isAstroStory(m)
