@@ -25,7 +25,7 @@ export function createAstrobookIntegration(
         config,
         logger,
       }) => {
-        if (!options?.production && import.meta.env.PROD) {
+        if (!options?.production && process.env.NODE_ENV === 'production') {
           logger.debug(`Skipping Astrobook in production`)
           return
         }
