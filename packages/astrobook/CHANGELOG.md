@@ -1,5 +1,11 @@
 # astrobook
 
+## 0.9.4
+
+### Patch Changes
+
+- Fix: relative import issues
+
 ## 0.9.3
 
 ### Patch Changes
