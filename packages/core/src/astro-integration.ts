@@ -65,7 +65,7 @@ export function createAstrobookIntegration(
                 rootDir,
                 {
                   baseUrl,
-                  head: options?.head || '@northstarthemes/astrobook-ui/components/head.astro',
+                  head: options?.head || '@northstarthemes/astrobook/components/head.astro',
                   css: options?.css || [],
                   title: options?.title || 'Astrobook',
                 },
