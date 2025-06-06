@@ -26,32 +26,27 @@ const groupedModules = groupBy(modules, (module) => module.directory)
         </div>
         {directoryModules.map((module) => (
           <Fragment>
-            <a
+            <div
               class:list={[
                 ':uno: flex items-center gap-2 rounded text-sm no-underline transition',
                 ':uno: px-2 py-1 text-gray-900 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700',
                 'astrobook-focus-ring',
               ]}
-              href={getPathWithBase(
-                `/dashboard/${module.stories[0]?.id}`,
-                config.baseUrl,
-              )}
             >
               <span class=":uno: i-lucide-box inline-block size-4 text-gray-400 dark:text-gray-500" />
               <span>{module.name}</span>
-            </a>
+            </div>
             {module.stories.map((story) => (
               <a
                 class:list={[
                   ':uno: flex items-center gap-2 rounded text-sm no-underline transition',
                   ':uno: py-1 pl-5 pr-2',
                   'astrobook-focus-ring',
-                  Astro.props.story === story.id
-                    ? ':uno: bg-gray-800 text-white hover:bg-gray-700 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-200'
-                    : ':uno: text-gray-600 hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100',
+                  ':uno: text-gray-600 hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100',
                 ]}
                 href={getPathWithBase(`/dashboard/${story.id}`, config.baseUrl)}
                 data-active={Astro.props.story === story.id ? '' : undefined}
+                data-story-id={story.id}
               >
                 <span class=":uno: i-lucide-diamond inline-block size-4 text-gray-400 dark:text-gray-500" />
                 <span>{story.name}</span>
@@ -103,6 +98,31 @@ const groupedModules = groupBy(modules, (module) => module.directory)
 
     const throttledSave = throttle(save, 100)
 
+    /**
+     * Updates the active state of sidebar links based on current URL
+     */
+    const updateActiveStates = () => {
+      const storyLinks = document.querySelectorAll('a[data-story-id]')
+      const currentPath = window.location.pathname
+      
+      storyLinks.forEach((link) => {
+        const href = link.getAttribute('href')
+        const isActive = currentPath === href
+        
+        if (isActive) {
+          link.setAttribute('data-active', '')
+          // Add active classes directly
+          link.classList.add('bg-gray-800', 'text-white', '!text-white')
+          link.classList.remove('text-gray-600', 'dark:text-gray-400')
+        } else {
+          link.removeAttribute('data-active')
+          // Remove active classes and restore inactive
+          link.classList.remove('bg-gray-800', 'text-white', '!text-white')
+          link.classList.add('text-gray-600', 'dark:text-gray-400')
+        }
+      })
+    }
+
     const load = () => {
       const el = document.getElementById(elementId)
       if (!el) return
@@ -113,12 +133,20 @@ const groupedModules = groupBy(modules, (module) => module.directory)
       }
 
       el.addEventListener('scroll', throttledSave)
+      
+      // Update active states on load
+      updateActiveStates()
     }
 
     load()
 
     document.addEventListener('astro:page-load', () => {
       load()
+    })
+
+    // Update active states when navigating with view transitions
+    document.addEventListener('astro:after-swap', () => {
+      updateActiveStates()
     })
   })()
 </script>

@@ -3,6 +3,7 @@ import '../style.css'
 import './layout.css'
 import Sidebar from './sidebar.astro'
 import { ThemeScript } from 'astro-theme-toggle'
+import { ClientRouter } from 'astro:transitions'
 import CustomHead from 'virtual:astrobook/components/head.mjs'
 import config from 'virtual:astrobook/global-config.mjs'
 
@@ -25,14 +26,16 @@ const hasSidebar = Astro.props.hasSidebar ?? true
     <title>{config.title}</title>
     <ThemeScript />
     <script src="./theme-message.ts"></script>
+	  <meta name="darkreader-lock" />
     <CustomHead />
+    <ClientRouter />
   </head>
   <body
     class=":uno: m-0 box-border flex max-h-full min-h-full flex-row items-stretch justify-start p-0"
   >
     {
       hasSidebar && (
-        <div class=":uno: flex w-64 min-w-64 max-w-64 flex-col border-0 border-r border-solid border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-zinc-900">
+        <div transition:persist class=":uno: flex w-64 min-w-64 max-w-64 flex-col border-0 border-r border-solid border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-zinc-900">
           <Sidebar story={Astro.props.story} />
         </div>
       )
