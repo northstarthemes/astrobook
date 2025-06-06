@@ -10,6 +10,16 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      '@tailwindcss/vite':
+        specifier: ^4.0.14
+        version: 4.1.7(vite@6.3.5(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))
+      dev:
+        specifier: ^0.1.3
+        version: 0.1.3
+      tailwindcss:
+        specifier: ^4.0.14
+        version: 4.1.7
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.4
@@ -60,26 +70,92 @@ importers:
         specifier: ^3.1.4
         version: 3.1.4(@types/debug@4.1.12)(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
 
-  examples/custom-head:
+  dev:
     dependencies:
+      '@astrojs/preact':
+        specifier: ^4.1.0
+        version: 4.1.0(@babel/core@7.27.1)(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(preact@10.26.6)(tsx@4.19.4)
+      '@astrojs/react':
+        specifier: ^4.3.0
+        version: 4.3.0(@types/node@22.15.24)(@types/react-dom@19.1.5(@types/react@19.1.4))(@types/react@19.1.4)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tsx@4.19.4)
+      '@astrojs/solid-js':
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(solid-js@1.9.7)(tsx@4.19.4)
+      '@astrojs/svelte':
+        specifier: ^7.1.0
+        version: 7.1.0(@types/node@22.15.24)(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))(jiti@2.4.2)(lightningcss@1.30.1)(svelte@5.31.1)(tsx@4.19.4)(typescript@5.8.3)
+      '@astrojs/vue':
+        specifier: ^5.1.0
+        version: 5.1.0(@types/node@22.15.24)(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(vue@3.5.14(typescript@5.8.3))
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../packages/astrobook
+      '@tailwindcss/vite':
+        specifier: ^4.0.14
+        version: 4.1.7(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))
+      '@types/react':
+        specifier: ^19.0.10
+        version: 19.1.4
+      '@types/react-dom':
+        specifier: ^19.0.4
+        version: 19.1.5(@types/react@19.1.4)
       astro:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-      astrobook:
-        specifier: '*'
-        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
+      lit:
+        specifier: ^3.2.1
+        version: 3.3.0
+      preact:
+        specifier: ^10.26.4
+        version: 10.26.6
+      react:
+        specifier: ^19.0.0
+        version: 19.1.0
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.1.0(react@19.1.0)
+      solid-js:
+        specifier: ^1.9.5
+        version: 1.9.7
+      svelte:
+        specifier: ^5.23.2
+        version: 5.31.1
+      tailwindcss:
+        specifier: ^4.0.14
+        version: 4.1.7
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.14(typescript@5.8.3)
+
+  examples/custom-head:
+    dependencies:
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../../packages/astrobook
+      astro:
+        specifier: ^5.8.0
+        version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
+
+  examples/custom-layout:
+    dependencies:
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../../packages/astrobook
+      astro:
+        specifier: ^5.8.0
+        version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
 
   examples/mixed:
     dependencies:
       '@astrojs/preact':
         specifier: ^4.1.0
         version: 4.1.0(@babel/core@7.27.1)(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(preact@10.26.6)(tsx@4.19.4)
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../../packages/astrobook
       astro:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-      astrobook:
-        specifier: '*'
-        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       preact:
         specifier: ^10.26.4
         version: 10.26.6
@@ -101,6 +177,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.1.0
         version: 5.1.0(@types/node@22.15.24)(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(vue@3.5.14(typescript@5.8.3))
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../../packages/astrobook
       '@types/react':
         specifier: ^19.0.10
         version: 19.1.4
@@ -110,9 +189,6 @@ importers:
       astro:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-      astrobook:
-        specifier: '*'
-        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       lit:
         specifier: ^3.2.1
         version: 3.3.0
@@ -140,15 +216,15 @@ importers:
       '@astrojs/preact':
         specifier: ^4.1.0
         version: 4.1.0(@babel/core@7.27.1)(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(preact@10.26.6)(tsx@4.19.4)
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../../packages/astrobook
       '@tailwindcss/vite':
         specifier: ^4.0.14
         version: 4.1.7(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))
       astro:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-      astrobook:
-        specifier: '*'
-        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       preact:
         specifier: ^10.26.4
         version: 10.26.6
@@ -161,15 +237,15 @@ importers:
       '@astrojs/preact':
         specifier: ^4.1.0
         version: 4.1.0(@babel/core@7.27.1)(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(preact@10.26.6)(tsx@4.19.4)
+      '@northstarthemes/astrobook':
+        specifier: workspace:*
+        version: link:../../packages/astrobook
       '@unocss/reset':
         specifier: ^66.1.2
         version: 66.1.2
       astro:
         specifier: ^5.8.0
         version: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-      astrobook:
-        specifier: '*'
-        version: 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
       preact:
         specifier: ^10.26.4
         version: 10.26.6
@@ -329,20 +405,6 @@ packages:
 
   '@antfu/utils@8.1.1':
     resolution: {integrity: sha512-Mex9nXf9vR6AhcXmMrlz/HVgYYZpVGJ6YlPgwl7UnaFpnshXs6EK/oa5Gpf3CzENMjkvEx2tQtntGnb7UtSTOQ==}
-
-  '@astrobook/core@0.8.1':
-    resolution: {integrity: sha512-tqdlF/4rFSIT1ijMwVtypl1CbZArFVCPxOuTyvLN9mskWR8TFak0zfp+FKYEXgiBPDZFWeTOB7AKxKsUYoZK8w==}
-
-  '@astrobook/types@0.8.1':
-    resolution: {integrity: sha512-jKQL5PUZ91+ClsRYhrxcpJk24v2hYfsC/Cwfv3lWAlNm2o0v1KRTxfaq09/kqMUS+1mwWtcmrqDTmoVG8q2PQA==}
-
-  '@astrobook/ui@0.8.1':
-    resolution: {integrity: sha512-QrZr9spTYs5m6BKLcdifw8XMVnLyoSm1JGkWMQILYEp/UH67SlxBXiPzV0EM+S8xj12mRe+CbfRuD5Cai5Mwtg==}
-    peerDependencies:
-      astro: '>=4.0.0'
-    peerDependenciesMeta:
-      astro:
-        optional: true
 
   '@astrojs/compiler@2.12.0':
     resolution: {integrity: sha512-7bCjW6tVDpUurQLeKBUN9tZ5kSv5qYrGmcn0sG0IwacL7isR2ZbyyA3AdZ4uxsuUFOS2SlgReTH7wkxO6zpqWA==}
@@ -2018,14 +2080,6 @@ packages:
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
-  astrobook@0.8.1:
-    resolution: {integrity: sha512-iT88wPZmMn6nb7Lo/V7m/MlgQTpuzmJlj9iFNGdbEsK5LpMLYMZOFuKei6nIjm3kZxdYSq/LNgp32oSMXIXDWg==}
-    peerDependencies:
-      astro: '>=4.0.0'
-    peerDependenciesMeta:
-      astro:
-        optional: true
-
   async-function@1.0.0:
     resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
     engines: {node: '>= 0.4'}
@@ -2075,6 +2129,9 @@ packages:
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
+
+  bindings@1.5.0:
+    resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
 
   birpc@2.3.0:
     resolution: {integrity: sha512-ijbtkn/F3Pvzb6jHypHRyve2QApOCZDR25D/VnkY2G/lBNcXCTsnsCxgY4k4PkVB7zfwzYbY3O9Lcqe3xufS5g==}
@@ -2423,6 +2480,10 @@ packages:
   deterministic-object-hash@2.0.2:
     resolution: {integrity: sha512-KxektNH63SrbfUyDiwXqRb1rLwKt33AmMv+5Nhsw1kqZ13SJBRTgZHtGbE+hH3a1mVW1cz+4pqSWVPAtLVXTzQ==}
     engines: {node: '>=18'}
+
+  dev@0.1.3:
+    resolution: {integrity: sha512-flCHQwAkXk3+1up/wo93Ms9E5Wf9K28ZGA7Oz55nBZ8OTdPPhyvZrwsT+twtySTFHIwv0w9CUNtagZgu1MgzXQ==}
+    hasBin: true
 
   devalue@5.1.1:
     resolution: {integrity: sha512-maua5KUiapvEwiEAe+XnlZ3Rh0GD+qI1J/nb9vrJc3muPXvcF/8gXYTWF76+5DAqHyDUtOIImEuo0YKE9mshVw==}
@@ -2804,6 +2865,9 @@ packages:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
 
+  file-uri-to-path@1.0.0:
+    resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
@@ -3086,6 +3150,11 @@ packages:
 
   ini@1.3.8:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
+
+  inotify@1.4.6:
+    resolution: {integrity: sha512-WW8/uqIA04O3AePQVe/Ms3ZLR0yGamaz8YOEpaXc4WBAGOPZfzu58wWErEPSUYaPyDrJRIeCn6PEIQgC1ZyQ5w==}
+    engines: {node: '>=0.8'}
+    os: [linux]
 
   internal-slot@1.1.0:
     resolution: {integrity: sha512-4gd7VpWNQNB4UKKCFFVcp1AVv+FMOgs9NKzjHKusc8jTMhd5eL1NqQqOpE0KzMds804/yHlglp3uxgluOqAPLw==}
@@ -3675,6 +3744,9 @@ packages:
 
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+
+  nan@2.22.2:
+    resolution: {integrity: sha512-DANghxFkS1plDdRsX0X9pm0Z6SJNN6gBdtXfanwoZ8hooC5gosGFSBGRYHUVPz1asKA/kMRqDRdHrluZ61SpBQ==}
 
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
@@ -5195,26 +5267,6 @@ snapshots:
 
   '@antfu/utils@8.1.1': {}
 
-  '@astrobook/core@0.8.1':
-    dependencies:
-      '@astrobook/types': 0.8.1
-      acorn: 8.14.1
-      acorn-jsx: 5.3.2(acorn@8.14.1)
-      fdir: 6.4.5(picomatch@4.0.2)
-      picomatch: 4.0.2
-      slash: 5.1.0
-
-  '@astrobook/types@0.8.1': {}
-
-  '@astrobook/ui@0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))':
-    dependencies:
-      '@astrobook/core': 0.8.1
-      '@astrobook/types': 0.8.1
-      astro-theme-toggle: 0.6.0
-      just-group-by: 2.2.0
-    optionalDependencies:
-      astro: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-
   '@astrojs/compiler@2.12.0': {}
 
   '@astrojs/internal-helpers@0.6.1': {}
@@ -6542,6 +6594,13 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.7
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.7
 
+  '@tailwindcss/vite@4.1.7(vite@6.3.5(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))':
+    dependencies:
+      '@tailwindcss/node': 4.1.7
+      '@tailwindcss/oxide': 4.1.7
+      tailwindcss: 4.1.7
+      vite: 6.3.5(@types/node@20.17.52)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
+
   '@tailwindcss/vite@4.1.7(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))':
     dependencies:
       '@tailwindcss/node': 4.1.7
@@ -7470,14 +7529,6 @@ snapshots:
       - uploadthing
       - yaml
 
-  astrobook@0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)):
-    dependencies:
-      '@astrobook/core': 0.8.1
-      '@astrobook/types': 0.8.1
-      '@astrobook/ui': 0.8.1(astro@5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3))
-    optionalDependencies:
-      astro: 5.8.0(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(tsx@4.19.4)(typescript@5.8.3)
-
   async-function@1.0.0: {}
 
   available-typed-arrays@1.0.7:
@@ -7520,6 +7571,10 @@ snapshots:
       is-windows: 1.0.2
 
   binary-extensions@2.3.0: {}
+
+  bindings@1.5.0:
+    dependencies:
+      file-uri-to-path: 1.0.0
 
   birpc@2.3.0: {}
 
@@ -7841,6 +7896,10 @@ snapshots:
   deterministic-object-hash@2.0.2:
     dependencies:
       base-64: 1.0.0
+
+  dev@0.1.3:
+    dependencies:
+      inotify: 1.4.6
 
   devalue@5.1.1: {}
 
@@ -8365,6 +8424,8 @@ snapshots:
     dependencies:
       flat-cache: 4.0.1
 
+  file-uri-to-path@1.0.0: {}
+
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -8698,6 +8759,11 @@ snapshots:
   indent-string@5.0.0: {}
 
   ini@1.3.8: {}
+
+  inotify@1.4.6:
+    dependencies:
+      bindings: 1.5.0
+      nan: 2.22.2
 
   internal-slot@1.1.0:
     dependencies:
@@ -9443,6 +9509,8 @@ snapshots:
   mrmime@2.0.1: {}
 
   ms@2.1.3: {}
+
+  nan@2.22.2: {}
 
   nanoid@3.3.11: {}
 

@@ -14,6 +14,7 @@ This repo was primarily forked to allow for importing types into the `.stories.t
 ### Other new features
 
 - `production` config option default: `false` so that the storybook pages can be put used for development only
+- `layout` config option that allows you to define a custom layout to wrap your components
 
 ## Try it Online
 

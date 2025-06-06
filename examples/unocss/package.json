@@ -15,7 +15,7 @@
     "@astrojs/preact": "^4.1.0",
     "@unocss/reset": "^66.1.2",
     "astro": "^5.8.0",
-    "astrobook": "*",
+    "@northstarthemes/astrobook": "*",
     "preact": "^10.26.4",
     "unocss": "^66.1.2"
   },

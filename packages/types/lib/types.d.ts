@@ -95,6 +95,25 @@ export interface IntegrationOptions {
    * ```
    */
   head?: string
+
+  /**
+   * The path to an Astro component to provide custom layout.
+   *
+   * @example
+   *
+   * ```js
+   * astrobook({
+   *  layout: './src/layouts/CustomLayout.astro',
+   * })
+   * ```
+   *
+   * ```astro
+   * astrobook({
+   *  layout: './src/layouts/CustomLayout.html',
+   * })
+   * ```
+   */
+  layout?: string
 }
 
 export interface StoryModule {
@@ -152,6 +171,7 @@ export interface Story {
 export interface GlobalConfig {
   baseUrl: string
   head: string
+  layout: string
   css: string[]
   title: string
 }

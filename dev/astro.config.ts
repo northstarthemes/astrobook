@@ -3,6 +3,7 @@ import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import astrobook from '@northstarthemes/astrobook'
 
@@ -12,6 +13,10 @@ export default defineConfig({
     port: 4321,
   },
 
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
   // Enable many frameworks to support all different kinds of components.
   integrations: [
     react({ include: ['**/react/*'] }),
@@ -19,6 +24,10 @@ export default defineConfig({
     solid({ include: ['**/solid/*'] }),
     svelte(),
     vue(),
-    astrobook({ directory: 'src/components' }),
+    astrobook({
+      directory: 'src/components',
+      layout: './src/components/CustomLayout.astro',
+      css: ['./src/styles/global.css'],
+    }),
   ],
 })

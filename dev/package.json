@@ -19,6 +19,7 @@
     "@astrojs/vue": "^5.1.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@tailwindcss/vite": "^4.0.14",
     "astro": "^5.8.0",
     "@northstarthemes/astrobook": "workspace:*",
     "lit": "^3.2.1",
@@ -27,6 +28,7 @@
     "react-dom": "^19.0.0",
     "solid-js": "^1.9.5",
     "svelte": "^5.23.2",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "tailwindcss": "^4.0.14"
   }
 }

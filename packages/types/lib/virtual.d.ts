@@ -14,3 +14,8 @@ declare module 'virtual:astrobook/components/head.mjs' {
 }
 
 declare module 'virtual:astrobook/user-css.mjs' {}
+
+declare module 'virtual:astrobook/layouts/layout.mjs' {
+  const Layout: (props: unknown) => unknown
+  export default Layout
+}
