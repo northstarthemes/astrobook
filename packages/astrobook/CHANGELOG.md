@@ -1,5 +1,11 @@
 # astrobook
 
+## 0.10.1
+
+### Patch Changes
+
+- feat: collapsable sidebar
+
 ## 0.10.0
 
 ### Minor Changes

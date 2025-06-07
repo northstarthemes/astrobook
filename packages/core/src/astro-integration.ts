@@ -68,6 +68,7 @@ export function createAstrobookIntegration(
                   layout: options?.layout || '@northstarthemes/astrobook/components/layout.astro',
                   css: options?.css || [],
                   title: options?.title || 'Astrobook',
+                  collapsed: options?.collapsed || false,
                 },
                 config,
               ),

@@ -114,6 +114,13 @@ export interface IntegrationOptions {
    * ```
    */
   layout?: string
+
+  /**
+   * Whether the sidebar is collapsed.
+   *
+   * @default false
+   */
+  collapsed?: boolean
 }
 
 export interface StoryModule {
@@ -174,6 +181,7 @@ export interface GlobalConfig {
   layout: string
   css: string[]
   title: string
+  collapsed: boolean
 }
 
 declare global {

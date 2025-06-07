@@ -28,6 +28,7 @@ export default defineConfig({
       directory: 'src/components',
       layout: './src/components/CustomLayout.astro',
       css: ['./src/styles/global.css'],
+      collapsed: true,
     }),
   ],
 })
