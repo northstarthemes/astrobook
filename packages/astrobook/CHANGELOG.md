@@ -1,5 +1,12 @@
 # astrobook
 
+## 0.10.0
+
+### Minor Changes
+
+- [`9b46ca3`](https://github.com/northstarthemes/astrobook/commit/9b46ca307bb17ea51625b54ba84f6c5a189c23c6) - Custom Layout
+  - View Transitions
+
 ## 0.9.5
 
 ### Patch Changes

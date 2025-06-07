@@ -1,7 +1,7 @@
 {
   "name": "example-custom-layout",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Astrobook example",
   "scripts": {
