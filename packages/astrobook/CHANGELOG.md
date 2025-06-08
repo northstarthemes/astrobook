@@ -1,5 +1,11 @@
 # astrobook
 
+## 0.10.2
+
+### Patch Changes
+
+- Bug fixes
+
 ## 0.10.1
 
 ### Patch Changes

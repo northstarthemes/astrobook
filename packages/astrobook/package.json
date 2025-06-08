@@ -1,7 +1,7 @@
 {
   "name": "@northstarthemes/astrobook",
   "type": "module",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "The minimal UI component playground",
   "author": "northstarthemes <northstarthemesofficial@gmail.com>",
   "license": "MIT",
