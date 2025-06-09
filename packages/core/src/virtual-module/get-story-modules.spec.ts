@@ -16,6 +16,9 @@ test('convertStoryFileToModule', () => {
       "id": "path/to/button",
       "importPath": "/my-project/path/to/Button.stories.js",
       "name": "Button",
+      "slots": [
+        "test",
+      ],
       "stories": [
         {
           "id": "path/to/button/primary-button",
@@ -26,7 +29,6 @@ test('convertStoryFileToModule', () => {
           "name": "SecondaryButton",
         },
       ],
-      slots: ['test'],
     }
   `)
 })
