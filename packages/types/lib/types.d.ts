@@ -157,6 +157,13 @@ export interface StoryModule {
    * All stories in the story module.
    */
   stories: Story[]
+
+  /**
+   * The slot names defined in the default export.
+   *
+   * @example ['test', 'header', 'footer']
+   */
+  slots: string[]
 }
 
 export interface Story {

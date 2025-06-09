@@ -8,6 +8,7 @@ test('convertStoryFileToModule', () => {
       filePath: '/my-project/path/to/Button.stories.js',
       defaultExport: true,
       namedExports: ['PrimaryButton', 'SecondaryButton'],
+      slots: ['test'],
     }),
   ).toMatchInlineSnapshot(`
     {
@@ -25,6 +26,7 @@ test('convertStoryFileToModule', () => {
           "name": "SecondaryButton",
         },
       ],
+      slots: ['test'],
     }
   `)
 })

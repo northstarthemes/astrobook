@@ -6,7 +6,7 @@ import { fdir } from 'fdir'
 import kebabCase from 'just-kebab-case'
 import slash from 'slash'
 
-import { getExports } from '../utils/get-exports'
+import { getExports, getDefaultExportSlots } from '../utils/get-exports'
 import { invariant } from '../utils/invariant'
 
 /**
@@ -45,6 +45,11 @@ type ParsedStoryFile = {
    * The named exports in the file
    */
   namedExports: string[]
+
+  /**
+   * The slot names from the default export
+   */
+  slots: string[]
 }
 
 async function parseStoryFiles(filePath: string): Promise<ParsedStoryFile> {
@@ -52,8 +57,9 @@ async function parseStoryFiles(filePath: string): Promise<ParsedStoryFile> {
   const exports = getExports(code)
   const defaultExport = exports.includes('default')
   const namedExports = exports.filter((name) => name !== 'default')
+  const slots = getDefaultExportSlots(code)
 
-  return { filePath, defaultExport, namedExports }
+  return { filePath, defaultExport, namedExports, slots }
 }
 
 export function convertStoryFileToModule(
@@ -90,6 +96,7 @@ export function convertStoryFileToModule(
     name,
     directory,
     importPath: slash(file.filePath),
+    slots: file.slots,
     stories: file.namedExports.map((name) => {
       return { id: `${moduleId}/${kebabCase(name)}`, name }
     }),

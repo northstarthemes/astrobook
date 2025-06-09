@@ -77,6 +77,12 @@ export async function getVirtualRoutes(
 }
 
 export function createVirtualRouteComponent(route: VirtualRoute): string {
+  const slotElements = route.storyModule.slots.length > 0 
+    ? route.storyModule.slots.map(slotName => 
+        `<Fragment slot="${slotName}" set:html={m['${route.story.name}']?.slots?.${slotName}} />`
+      ).join('\n      ')
+    : ''
+
   return `
 ---
 import StoryPage from '@northstarthemes/astrobook/pages/story.astro'
@@ -89,7 +95,8 @@ const isAstro = isAstroStory(m)
 <StoryPage story={'${route.props.story}'} hasSidebar={${route.props.hasSidebar}}>
   {
     isAstro
-      ? (<m.default.component { ...m['${route.story.name}']?.args } />)
+      ? (
+      <m.default.component { ...m['${route.story.name}']?.args }>${slotElements}<Fragment set:html={m['${route.story.name}']?.slots?.default} /></m.default.component>)
       : (<m.default.component { ...m['${route.story.name}']?.args } client:load />)
   }
 </StoryPage>

@@ -17,6 +17,39 @@ This repo was primarily forked to allow for importing types into the `.stories.t
 - `layout` config option that allows you to define a custom layout to wrap your components
 - `collapsed` config option default: `false` collapses the sidebar components
 
+#### Slots
+
+If you're using named slots, define them in the default export. If you're only using an unamed `<slot />` in your component, then you don't need to define it in the default export.
+
+```ts
+// src/components/Button.stories.ts
+import { Button } from './Button.astro'
+import type { ComponentProps } from 'astro/types';
+
+const slots = ['message'] as const;
+
+type Props = { 
+  args: ComponentProps<typeof Button>, 
+  slots: Partial<Record<'default' | typeof slots[number], string>> 
+};
+
+
+export default {
+  component: Button,
+  slots,
+}
+
+export const PrimaryButton: Props = {
+  args: {
+    variant: 'primary',
+  },
+  slots: {
+    default: '<span>Hello</span>',
+    message: '<span>World</span>',
+  }
+}
+```
+
 ## Try it Online
 
 - An example of using multiple UI rendering frameworks (React, Preact, Vue, Svelte, Solid, Lit, Astro) with Astrobook.
