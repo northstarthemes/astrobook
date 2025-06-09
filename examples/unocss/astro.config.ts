@@ -1,6 +1,6 @@
 import preact from '@astrojs/preact'
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 import unocss from 'unocss/astro'
 
 // https://astro.build/config

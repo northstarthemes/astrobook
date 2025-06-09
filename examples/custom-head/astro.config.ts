@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 // https://astro.build/config
 export default defineConfig({

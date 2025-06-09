@@ -90,7 +90,7 @@ export const PrimaryButton: Props = {
    // astro.config.mjs
    import { defineConfig } from 'astro/config'
    import react from '@astrojs/react'
-   import astrobook from 'astrobook'
+   import astrobook from '@northstarthemes/astrobook'
 
    // https://astro.build/config
    export default defineConfig({
@@ -141,7 +141,7 @@ You can use the `directory` option to specify the directory to scan for stories.
 ```js
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 export default defineConfig({
   integrations: [
@@ -160,7 +160,7 @@ You can run Astrobook as a standalone app. You can also add it to your existing 
 ```js
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 export default defineConfig({
   integrations: [
@@ -178,7 +178,7 @@ Notice that the `subpath` option is relative to the [base URL](https://docs.astr
 ```js
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 export default defineConfig({
   base: '/base',
@@ -199,7 +199,7 @@ You can customize the styles by using the `css` option to specify the CSS files 
 ```js
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 export default defineConfig({
   integrations: [
@@ -235,7 +235,7 @@ Below is an example of a custom head component that configures the global styles
 ```js
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 export default defineConfig({
   integrations: [
@@ -254,7 +254,7 @@ You can set the title for your website.
 ```js
 // astro.config.mjs
 import { defineConfig } from 'astro/config'
-import astrobook from 'astrobook'
+import astrobook from '@northstarthemes/astrobook'
 
 export default defineConfig({
   integrations: [
