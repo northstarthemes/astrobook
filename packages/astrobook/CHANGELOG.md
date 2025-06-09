@@ -1,5 +1,11 @@
 # astrobook
 
+## 0.11.0
+
+### Minor Changes
+
+- feat: slots
+
 ## 0.10.2
 
 ### Patch Changes
