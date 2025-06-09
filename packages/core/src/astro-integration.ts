@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import pathPosix from 'node:path/posix'
 import { fileURLToPath } from 'node:url'
+
 import type { IntegrationOptions } from '@northstarthemes/astrobook-types'
 import type { AstroIntegration } from 'astro'
 
@@ -24,7 +25,7 @@ export function createAstrobookIntegration(
         config,
         logger,
       }) => {
-        if (!options?.production && process.env.NODE_ENV === "production") {
+        if (!options?.production && process.env.NODE_ENV === 'production') {
           logger.debug(`Skipping Astrobook in production`)
           return
         }
@@ -64,8 +65,12 @@ export function createAstrobookIntegration(
                 rootDir,
                 {
                   baseUrl,
-                  head: options?.head || '@northstarthemes/astrobook/components/head.astro',
-                  layout: options?.layout || '@northstarthemes/astrobook/components/layout.astro',
+                  head:
+                    options?.head ||
+                    '@northstarthemes/astrobook/components/head.astro',
+                  layout:
+                    options?.layout ||
+                    '@northstarthemes/astrobook/components/layout.astro',
                   css: options?.css || [],
                   title: options?.title || 'Astrobook',
                   collapsed: options?.collapsed || false,

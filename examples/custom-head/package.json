@@ -12,8 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.8.0",
-    "@northstarthemes/astrobook": "*"
+    "@northstarthemes/astrobook": "*",
+    "astro": "^5.8.0"
   },
   "stackblitz": {
     "installDependencies": false,

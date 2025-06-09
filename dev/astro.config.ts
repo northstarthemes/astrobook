@@ -3,9 +3,9 @@ import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import astrobook from '@northstarthemes/astrobook'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
-import astrobook from '@northstarthemes/astrobook'
 
 // https://astro.build/config
 export default defineConfig({

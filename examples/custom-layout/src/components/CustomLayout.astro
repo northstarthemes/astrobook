@@ -1,49 +1,45 @@
-<div
-	data-container
->
-	<div
-		data-container-inner
-	>
-		<slot />
-	</div>
+<div data-container>
+  <div data-container-inner>
+    <slot />
+  </div>
 </div>
 
 <style>
-	[data-container] {
-		container-name: container;
-		container-type: inline-size;
-		width: 100%;
-		height: 100%;
-		min-width: 0;
-		min-height: 0;
-		max-height: 100%;
-		background-color: #616161;
-	}
+  [data-container] {
+    container-name: container;
+    container-type: inline-size;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%;
+    background-color: #616161;
+  }
 
-	[data-container-inner] {
-		padding: 0.5rem;
-		width: 100%;
-		height: 100%;
-		min-width: 0;
-		min-height: 0;
-		max-height: 100%;
-		display: flex;
-		flex-direction: column;
-		margin-left: auto;
-		margin-right: auto;
-		box-sizing: border-box;
-		background-color: #616161;
-	}
+  [data-container-inner] {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    background-color: #616161;
+  }
 
-	@container container (width >= 30rem) and (width < 50rem) {
-		[data-container-inner] {
-			padding: 1rem;
-		}
-	}
+  @container container (width >= 30rem) and (width < 50rem) {
+    [data-container-inner] {
+      padding: 1rem;
+    }
+  }
 
-	@container container (width >= 900px) {
-		[data-container-inner] {
-			padding: 4rem;
-		}
-	}
+  @container container (width >= 900px) {
+    [data-container-inner] {
+      padding: 4rem;
+    }
+  }
 </style>

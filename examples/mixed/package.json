@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@astrojs/preact": "^4.1.0",
-    "astro": "^5.8.0",
     "@northstarthemes/astrobook": "*",
+    "astro": "^5.8.0",
     "preact": "^10.26.4"
   },
   "stackblitz": {

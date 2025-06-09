@@ -77,11 +77,15 @@ export async function getVirtualRoutes(
 }
 
 export function createVirtualRouteComponent(route: VirtualRoute): string {
-  const slotElements = route.storyModule.slots.length > 0 
-    ? route.storyModule.slots.map(slotName => 
-        `<Fragment slot="${slotName}" set:html={m['${route.story.name}']?.slots?.${slotName}} />`
-      ).join('\n      ')
-    : ''
+  const slotElements =
+    route.storyModule.slots.length > 0
+      ? route.storyModule.slots
+          .map(
+            (slotName) =>
+              `<Fragment slot="${slotName}" set:html={m['${route.story.name}']?.slots?.${slotName}} />`,
+          )
+          .join('\n      ')
+      : ''
 
   return `
 ---

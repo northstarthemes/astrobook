@@ -15,7 +15,7 @@ const groupedModules = groupBy(modules, (module) => module.directory)
 ---
 
 <div
-  class=":uno: flex flex-col gap-4 overflow-y-auto border-0 px-2 pb-8 pt-4"
+  class=":uno: flex flex-col gap-4 overflow-y-auto border-0 px-2 pt-4 pb-8"
   id="astrobook-sidebar-component-list"
 >
   {
@@ -37,21 +37,27 @@ const groupedModules = groupBy(modules, (module) => module.directory)
               data-expanded="false"
               data-config-expanded={config.collapsed ? 'false' : 'true'}
             >
-              <span class=":uno: i-lucide-chevron-down inline-block size-4 text-gray-400 dark:text-gray-500 transition-transform astrobook-chevron collapsed" />
+              <span class=":uno: i-lucide-chevron-down astrobook-chevron collapsed inline-block size-4 text-gray-400 transition-transform dark:text-gray-500" />
               <span class=":uno: i-lucide-box inline-block size-4 text-gray-400 dark:text-gray-500" />
               <span>{module.name}</span>
             </button>
-            <div class="astrobook-stories-container collapsed" data-module-stories={module.name}>
+            <div
+              class="astrobook-stories-container collapsed"
+              data-module-stories={module.name}
+            >
               {module.stories.map((story) => (
                 <a
                   class:list={[
                     ':uno: flex items-center gap-2 rounded text-sm no-underline transition',
-                    ':uno: py-1 pl-5 pr-2',
+                    ':uno: py-1 pr-2 pl-5',
                     'astrobook-focus-ring',
                     'outline-offset-[-1px]',
                     ':uno: text-gray-600 hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100',
                   ]}
-                  href={getPathWithBase(`/dashboard/${story.id}`, config.baseUrl)}
+                  href={getPathWithBase(
+                    `/dashboard/${story.id}`,
+                    config.baseUrl,
+                  )}
                   data-active={Astro.props.story === story.id ? '' : undefined}
                   data-story-id={story.id}
                   tabindex="-1"
@@ -71,19 +77,21 @@ const groupedModules = groupBy(modules, (module) => module.directory)
 <style>
   .astrobook-stories-container {
     overflow: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    transition:
+      max-height 0.3s ease-out,
+      opacity 0.3s ease-out;
     opacity: 1;
   }
-  
+
   .astrobook-stories-container.collapsed {
     max-height: 0;
     opacity: 0;
   }
-  
+
   .astrobook-chevron {
     transform: rotate(0deg);
   }
-  
+
   .astrobook-chevron.collapsed {
     transform: rotate(-90deg);
   }
@@ -135,39 +143,44 @@ const groupedModules = groupBy(modules, (module) => module.directory)
     const updateActiveStates = () => {
       const storyLinks = document.querySelectorAll('a[data-story-id]')
       const currentPath = window.location.pathname
-      
+
       // Reset all modules to not have active stories
       const allToggles = document.querySelectorAll('.astrobook-module-toggle')
       allToggles.forEach((toggle) => {
         toggle.removeAttribute('data-has-active-story')
       })
-      
+
       storyLinks.forEach((link) => {
         const href = link.getAttribute('href')
         const isActive = currentPath === href
-        
+
         if (isActive) {
           link.setAttribute('data-active', '')
           // Add active classes directly
           link.classList.add('bg-gray-800', 'text-white', '!text-white')
           link.classList.remove('text-gray-600', 'dark:text-gray-400')
-          
+
           // Find the parent module and ensure it's expanded
           const storiesContainer = link.closest('.astrobook-stories-container')
           if (storiesContainer) {
-            const moduleId = storiesContainer.getAttribute('data-module-stories')
-            const moduleToggle = document.querySelector(`[data-module-id="${moduleId}"]`)
+            const moduleId = storiesContainer.getAttribute(
+              'data-module-stories',
+            )
+            const moduleToggle = document.querySelector(
+              `[data-module-id="${moduleId}"]`,
+            )
             const chevron = moduleToggle?.querySelector('.astrobook-chevron')
-            
+
             if (moduleToggle && chevron) {
               // Mark as having active story and ensure expanded
               moduleToggle.setAttribute('data-has-active-story', 'true')
               moduleToggle.setAttribute('data-expanded', 'true')
               storiesContainer.classList.remove('collapsed')
               chevron.classList.remove('collapsed')
-              
+
               // Ensure all links in this container are focusable
-              const containerLinks = storiesContainer.querySelectorAll('a[data-story-id]')
+              const containerLinks =
+                storiesContainer.querySelectorAll('a[data-story-id]')
               containerLinks.forEach((containerLink) => {
                 containerLink.removeAttribute('tabindex')
               })
@@ -186,12 +199,14 @@ const groupedModules = groupBy(modules, (module) => module.directory)
      * Updates tab navigation for collapsed/expanded containers
      */
     const updateTabNavigation = () => {
-      const storiesContainers = document.querySelectorAll('.astrobook-stories-container')
-      
+      const storiesContainers = document.querySelectorAll(
+        '.astrobook-stories-container',
+      )
+
       storiesContainers.forEach((container) => {
         const isCollapsed = container.classList.contains('collapsed')
         const links = container.querySelectorAll('a[data-story-id]')
-        
+
         links.forEach((link) => {
           if (isCollapsed) {
             link.setAttribute('tabindex', '-1')
@@ -207,27 +222,31 @@ const groupedModules = groupBy(modules, (module) => module.directory)
      */
     const applyInitialExpansionState = () => {
       const toggles = document.querySelectorAll('.astrobook-module-toggle')
-      
+
       toggles.forEach((toggle) => {
         const moduleId = toggle.getAttribute('data-module-id')
-        const configExpanded = toggle.getAttribute('data-config-expanded') === 'true'
-        const hasActiveStory = toggle.getAttribute('data-has-active-story') === 'true'
-        
+        const configExpanded =
+          toggle.getAttribute('data-config-expanded') === 'true'
+        const hasActiveStory =
+          toggle.getAttribute('data-has-active-story') === 'true'
+
         if (!moduleId) return
-        
-        const storiesContainer = document.querySelector(`[data-module-stories="${moduleId}"]`)
+
+        const storiesContainer = document.querySelector(
+          `[data-module-stories="${moduleId}"]`,
+        )
         const chevron = toggle.querySelector('.astrobook-chevron')
-        
+
         if (!storiesContainer || !chevron) return
-        
+
         // Expand if config says to expand OR if it has an active story
         const shouldExpand = configExpanded || hasActiveStory
-        
+
         if (shouldExpand) {
           toggle.setAttribute('data-expanded', 'true')
           storiesContainer.classList.remove('collapsed')
           chevron.classList.remove('collapsed')
-          
+
           // Make links focusable
           const links = storiesContainer.querySelectorAll('a[data-story-id]')
           links.forEach((link) => {
@@ -242,35 +261,40 @@ const groupedModules = groupBy(modules, (module) => module.directory)
      */
     const setupToggleFunctionality = () => {
       const toggles = document.querySelectorAll('.astrobook-module-toggle')
-      
+
       toggles.forEach((toggle) => {
         const moduleId = toggle.getAttribute('data-module-id')
         if (!moduleId) return
-        
+
         // Skip if already initialized
         if (toggle.hasAttribute('data-initialized')) return
         toggle.setAttribute('data-initialized', 'true')
-        
-        const storiesContainer = document.querySelector(`[data-module-stories="${moduleId}"]`)
+
+        const storiesContainer = document.querySelector(
+          `[data-module-stories="${moduleId}"]`,
+        )
         const chevron = toggle.querySelector('.astrobook-chevron')
-        
+
         if (!storiesContainer || !chevron) return
-        
+
         // Add click handler
         toggle.addEventListener('click', () => {
           // Don't allow collapsing if this module has an active story
-          const hasActiveStory = toggle.getAttribute('data-has-active-story') === 'true'
+          const hasActiveStory =
+            toggle.getAttribute('data-has-active-story') === 'true'
           if (hasActiveStory) {
             return // Prevent collapsing modules with active stories
           }
-          
+
           const isExpanded = toggle.getAttribute('data-expanded') === 'true'
           const newExpanded = !isExpanded
-          
-          console.log(`Toggle clicked for ${moduleId}: ${isExpanded} -> ${newExpanded}`)
-          
+
+          console.log(
+            `Toggle clicked for ${moduleId}: ${isExpanded} -> ${newExpanded}`,
+          )
+
           toggle.setAttribute('data-expanded', String(newExpanded))
-          
+
           if (newExpanded) {
             storiesContainer.classList.remove('collapsed')
             chevron.classList.remove('collapsed')
@@ -278,7 +302,7 @@ const groupedModules = groupBy(modules, (module) => module.directory)
             storiesContainer.classList.add('collapsed')
             chevron.classList.add('collapsed')
           }
-          
+
           // Update tab navigation after toggle
           updateTabNavigation()
         })
@@ -295,13 +319,13 @@ const groupedModules = groupBy(modules, (module) => module.directory)
       }
 
       el.addEventListener('scroll', throttledSave)
-      
+
       // Update active states on load
       updateActiveStates()
-      
+
       // Apply initial expansion state after active states are determined
       applyInitialExpansionState()
-      
+
       // Setup toggle functionality
       setupToggleFunctionality()
     }

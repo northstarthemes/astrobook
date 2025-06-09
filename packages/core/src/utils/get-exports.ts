@@ -1,5 +1,5 @@
-import { Parser } from 'acorn'
 import { tsPlugin } from '@sveltejs/acorn-typescript'
+import { Parser } from 'acorn'
 
 /**
  * Parses the content of the given file and returns all its exports
@@ -83,19 +83,22 @@ export function getDefaultExportSlots(code: string): string[] {
     for (const node of ast.body) {
       if (node.type === 'ExportDefaultDeclaration') {
         const declaration = node.declaration
-        
+
         // Handle object expression
         if (declaration.type === 'ObjectExpression') {
           return extractSlotsFromObjectExpression(declaration)
         }
-        
+
         // Handle variable reference (e.g., export default config)
         if (declaration.type === 'Identifier') {
           // Look for the variable declaration
           for (const otherNode of ast.body) {
             if (otherNode.type === 'VariableDeclaration') {
               for (const declarator of otherNode.declarations) {
-                if (declarator.id.type === 'Identifier' && declarator.id.name === declaration.name) {
+                if (
+                  declarator.id.type === 'Identifier' &&
+                  declarator.id.name === declaration.name
+                ) {
                   if (declarator.init?.type === 'ObjectExpression') {
                     return extractSlotsFromObjectExpression(declarator.init)
                   }
@@ -109,20 +112,24 @@ export function getDefaultExportSlots(code: string): string[] {
   } catch (error) {
     console.warn('Failed to parse slots from default export:', error)
   }
-  
+
   return []
 }
 
 function extractSlotsFromObjectExpression(objectExpression: any): string[] {
   for (const property of objectExpression.properties) {
-    if (property.type === 'Property' && 
-        property.key.type === 'Identifier' && 
-        property.key.name === 'slots') {
-      
+    if (
+      property.type === 'Property' &&
+      property.key.type === 'Identifier' &&
+      property.key.name === 'slots'
+    ) {
       if (property.value.type === 'ArrayExpression') {
         const slots: string[] = []
         for (const element of property.value.elements) {
-          if (element?.type === 'Literal' && typeof element.value === 'string') {
+          if (
+            element?.type === 'Literal' &&
+            typeof element.value === 'string'
+          ) {
             slots.push(element.value)
           }
         }

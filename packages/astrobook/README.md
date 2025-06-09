@@ -9,7 +9,7 @@ Astrobook is a UI component playground that supports multiple frameworks includi
 
 ## Fork Changes
 
-This repo was primarily forked to allow for importing types into the `.stories.ts` files. This required a different parser. 
+This repo was primarily forked to allow for importing types into the `.stories.ts` files. This required a different parser.
 
 ### Other new features
 
@@ -24,15 +24,14 @@ If you're using named slots, define them in the default export. If you're only u
 ```ts
 // src/components/Button.stories.ts
 import { Button } from './Button.astro'
-import type { ComponentProps } from 'astro/types';
+import type { ComponentProps } from 'astro/types'
 
-const slots = ['message'] as const;
+const slots = ['message'] as const
 
-type Props = { 
-  args: ComponentProps<typeof Button>, 
-  slots: Partial<Record<'default' | typeof slots[number], string>> 
-};
-
+type Props = {
+  args: ComponentProps<typeof Button>
+  slots: Partial<Record<'default' | (typeof slots)[number], string>>
+}
 
 export default {
   component: Button,
@@ -46,7 +45,7 @@ export const PrimaryButton: Props = {
   slots: {
     default: '<span>Hello</span>',
     message: '<span>World</span>',
-  }
+  },
 }
 ```
 
